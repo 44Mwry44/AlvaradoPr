@@ -1,0 +1,75 @@
+html
+{
+    background-color: #1f263d;
+    color: #f5f5fa;
+}
+
+.Articulo 
+{
+    float: right;
+    margin: 0 2rem;
+    width: 75%;
+    h1
+    {
+        margin-top: 0;
+    }
+    font-family: "Helvetica";
+}
+
+.Bloque1
+{
+    display: block;
+}
+
+.Texto1
+{
+    
+    float: left;
+    width: 65%;
+    padding: 1rem;
+    text-align: justify;
+    background-color: #8357c5;
+    border-top: .5rem solid darken($color: #8357c5, $amount: 25%);
+    border-right: .5rem solid darken($color: #8357c5, $amount: 15%);
+    font-size: 1.3rem;
+}
+
+.img1
+{
+    width: 22rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.Bloque2
+{
+    display:block;
+    
+    h2
+    {
+        text-align: right;
+    }
+}
+
+.Lista
+{
+    float: right;
+    text-align: left;
+    width: 50%;
+    text-align: justify;
+    background-color: #8357c5;
+    border-top: .5rem solid darken($color: #8357c5, $amount: 25%);
+    border-right: .5rem solid darken($color: #8357c5, $amount: 15%);
+    font-size: 1.3rem;
+    ol
+    {
+        padding-right: 1rem;
+    }
+}
+
+.img2
+{
+    width: 37.5rem;
+    display: block;
+    margin: 0 auto;
+}
