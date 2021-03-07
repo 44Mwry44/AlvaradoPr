@@ -1,0 +1,104 @@
+.grid
+{
+    margin: 1rem auto;
+    display: grid;
+    grid-gap: 2rem;
+    width: 95%;
+    border: solid;
+
+    grid-template-areas:    "sidebar contenido contenido contenido"
+                            "sidebar contenido contenido contenido";
+}
+
+.sidebar 
+{
+    margin: 2rem .5rem;
+    border: solid;
+    grid-area: sidebar;
+    height: 52rem;
+    max-width: 100%;
+}
+
+.contenido
+{
+    margin: 2rem;
+    border: solid;
+    grid-area: contenido;
+}
+
+.sidebar a
+{
+    display: flex;
+    margin: 2rem auto;
+    padding: 2rem;
+    justify-content: center;
+    align-content: space-around;
+    border: solid;
+    max-width: 80%;
+}
+
+@media screen and (max-width: 768px)
+{
+    .grid
+    {
+        grid-template-areas:    "sidebar sidebar sidebar sidebar"
+                                "contenido contenido contenido contenido";
+    }
+    
+    .sidebar
+    {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: .2rem;
+        height: 5rem;
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+
+    .sidebar a
+    {   
+        margin: .2rem auto;
+        padding: 0;
+        width: 80%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .contenido
+    {
+        margin-top: 0;
+        height: 40rem;
+    }
+
+    
+}
+
+@media screen and (max-width: 500px)
+{
+    .grid
+    {
+        grid-template-areas:    "sidebar sidebar sidebar sidebar"
+                                "contenido contenido contenido contenido";
+    }
+    
+    .sidebar
+    {
+        display: inline;
+        height: fit-content;
+    }
+
+    .sidebar a
+    {   
+        margin: .2rem auto;
+        padding: .5rem 0;
+        width: 80%;
+    }
+
+    .contenido
+    {
+        margin-top: 0;
+        height: 40rem;
+    }
+
+    
+}
