@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26.15" height="24.303" viewBox="0 0 26.15 24.303">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#707070;stroke-linecap:round;stroke-miterlimit:10;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="Usuario" transform="translate(1 1)">
+        <path id="Trazado_302" d="M3 78.24c0-5.945 5.406-10.765 12.075-10.765S27.15 72.295 27.15 78.24" class="cls-1" transform="translate(-3 -55.937)"/>
+        <circle id="Elipse_99" cx="5.769" cy="5.769" r="5.769" class="cls-1" transform="translate(6.306)"/>
+    </g>
+</svg>

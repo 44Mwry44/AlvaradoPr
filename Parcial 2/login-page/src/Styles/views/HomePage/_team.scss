@@ -1,0 +1,20 @@
+.team-area{
+    padding:$m-size;
+    padding-right: 10rem;
+    padding-left: 10rem;
+}
+
+.team-member{
+    text-align: center;
+}
+
+.team-member img{
+    width: 25rem;
+    height: auto;
+}
+
+.team-member h4{
+    margin-top: $m-size;
+    color: $theme-color;
+}
+
