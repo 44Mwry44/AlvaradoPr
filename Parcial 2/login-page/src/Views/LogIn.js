@@ -4,15 +4,31 @@ import $ from "jquery"
 
 $(function() {
     
-    $( "#btn-Entrar" ).on( 'click', function(){
+    /*$( "#btn-Entrar" ).on( 'click', function(){
         if($("#User").val() != "" && $("#User").val() != "")
         {
             alert("Entraste");
         }
         
-    } );
-  
+    } );*/
+    
+    /*$( document ).ajaxSend(function() {
+        $( ".log" ).text( "Triggered ajaxSend handler." );
+      });*/
+    
+    $( "#btn-Entrar" ).on( 'click', function() {
+        $( ".result" ).load( "ajax/test.html" );
+      });
+    
+    $( document ).ajaxSend(function( event, jqxhr, settings ) {
+        if($("#User").val() == "Mwry" && $("#User").val() == "Mwry")
+        {
+            alert("Entraste");
+        }
+      });
+
 });
+
 
 function main() {
 
@@ -54,6 +70,8 @@ function main() {
                 </div>
 
                 <button id = "btn-Entrar" className = "btn-Entrar">Entrar</button>
+                <div class="result"></div>
+                <div class="log"></div>
 
                 
                 {/* Link - Password Forgotten */}
