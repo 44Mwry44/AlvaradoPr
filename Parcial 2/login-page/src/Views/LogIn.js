@@ -5,7 +5,11 @@ import $ from "jquery"
 $(function() {
     
     $( "#btn-Entrar" ).on( 'click', function(){
-        alert("Entraste, pero no verifique tus datos. Creo que tiene que ver con mis componente, lo revisaré y cuando lo arregle se actualizará el repositorio");
+        if($("#User").val() != "" && $("#User").val() != "")
+        {
+            alert("Entraste");
+        }
+        
     } );
   
 });
@@ -32,8 +36,18 @@ function main() {
                     <form>  
                         <div className = "row justify-content-center">
                             <div className = "col-lg-5">
-                                <TextField id = "EmailText" imgURL="/img/LoginPage/Usuario.svg"  type = "text"        textoInicial= "Usuario o E-mail" />
-                                <TextField id = "PasswordText" imgURL="/img/LoginPage/candado.svg"  type = "password"    textoInicial = "Contraseña" />
+                            
+                            <div className="campo">
+                                <img className = "imagen" src="/img/LoginPage/Usuario.svg" />
+                                <input id = "User" className = "texto" type = "text" placeholder = "Usuario o E-mail"/>
+                            </div>
+
+                            <div className="campo">
+                                <img className = "imagen" src="/img/LoginPage/candado.svg" />
+                                <input id = "Pass" className = "texto" type = "password" placeholder = "Contraseña"/>
+                            </div>
+                                { /* <TextField id = "EmailText" imgURL="/img/LoginPage/Usuario.svg"  type = "text"        textoInicial= "Usuario o E-mail" /> */ }
+                                { /*  <TextField id = "PasswordText" imgURL="/img/LoginPage/candado.svg"  type = "password"    textoInicial = "Contraseña" /> */ }
                             </div>
                         </div>
                     </form>
