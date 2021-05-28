@@ -1,0 +1,18 @@
+.process-steps{
+    padding-right: $xl-size;
+    padding-left: $xl-size;
+    text-align: center;
+}
+
+.process-steps span{
+    font-size: $s-size;
+    color: $theme-color;
+    font-weight: 400;
+}
+
+.process-step-icon{
+    color: $theme-color;
+    margin-bottom: $s-size;
+    height: 15rem;
+    width: auto;
+}

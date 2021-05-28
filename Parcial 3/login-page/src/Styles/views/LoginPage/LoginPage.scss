@@ -1,0 +1,103 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.link{
+    display: flex;
+    justify-content: center;
+
+    font-family: 'Poppins';
+    text-decoration: underline;
+    margin: auto;
+}
+
+.saludo{
+    display: flex;
+    justify-content: center;
+
+    margin: 1.2rem;
+
+    font-family: 'Poppins';
+    font-size: 30px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: normal;
+    text-align: left;
+    color: #484848
+}
+
+.Formulario
+{
+    margin: 4rem;
+}
+
+.btn-Entrar{
+    display: block;
+
+    border: 2px solid #4e008e;
+    border-radius: 100px;
+
+    padding: .5rem 3.2rem;
+    margin: 2rem auto;
+    background-color: #4e008e;
+    
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: white;
+}
+
+.link .NoPass
+{
+    margin: 2.5rem;
+}
+
+.linea{
+    margin-top: 12rem;
+    height: 0;
+    border: solid 3px #b7b7b7;
+}
+
+.No-tienes-cuenta {
+    width: 133px;
+    height: 20px;
+    margin: 12.1px 39px 0 120.5px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #484848;
+    padding: 0;
+  }
+
+  .Crear-cuenta {
+    width: 93px;
+    height: 20px;
+    margin: 12.1px 160.4px 0 39px;
+    padding: 0;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4e008e;
+  }

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20.828" height="27.935" viewBox="0 0 20.828 27.935">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#707070;stroke-linecap:round;stroke-miterlimit:10;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="candado" transform="translate(1 1)">
+        <rect id="Rectángulo_214" width="18.828" height="14.142" class="cls-1" rx="2" transform="translate(0 11.793)"/>
+        <path id="Trazado_300" d="M31.421 13.789V9.537A6.323 6.323 0 0 0 25.335 3h-.509a6.323 6.323 0 0 0-6.086 6.537v4.252" class="cls-1" transform="translate(-15.667 -3)"/>
+        <path id="Trazado_301" d="M44.989 80.789A1.993 1.993 0 1 1 43 78.8a1.993 1.993 0 0 1 1.989 1.989z" class="cls-1" transform="translate(-33.583 -62.995)"/>
+        <path id="Línea_44" d="M0 1.798L0 0" class="cls-1" transform="translate(9.414 20.448)"/>
+    </g>
+</svg>
