@@ -1,9 +1,11 @@
-import  React, {useState, useEffect}  from "react";
-import TextField from "../Componentes/TextField.js";
+import  React  from "react";
+//import TextField from "../Componentes/TextField.js";
 import API from '../RutaAPI.js'
 import Bienvenido from '../Componentes/Bienvenido.js';
 import MD5 from 'crypto-js/md5';
-
+import { Link } from "react-router-dom";
+import Modal from 'react-modal';
+import { nodeName } from "jquery";
 
 class Login extends React.Component {
     constructor(props) {
@@ -15,6 +17,7 @@ class Login extends React.Component {
         };
         this.handleChangeUser = this.handleChangeUser.bind(this)
         this.handleChangePass = this.handleChangePass.bind(this);
+        this.handleLastUser = this.handleLastUser.bind(this);
     }
 
 
@@ -29,9 +32,9 @@ class Login extends React.Component {
     IniciarSesion = async () =>
     {
         
-        const respuesta = await fetch(`${API.RUTA_API}/Prueba.php?user=${this.state.user}&pass=${this.state.pass}`);
+        const respuesta = await fetch(`${API.RUTA_API}/IniciarSesion.php?user=${this.state.user}&pass=${this.state.pass}`);
         //await console.log(respuesta.json());
-        try
+        try 
         {
             if(await respuesta.json())
             {
@@ -45,6 +48,12 @@ class Login extends React.Component {
             alert("Datos errados, pruebe nuevamente");
             console.error(e.message);
         }
+    }
+
+    handlePageChange()
+    {
+        <Link to= "/home"/>;
+        console.log(1);
     }
 
     handleChangeUser(event) 
@@ -113,8 +122,20 @@ class Login extends React.Component {
                 <div class="log"></div>
 
                 {/*Modal de "Bienvernido"*/}
-                {/*<Bienvenido usuarioValido = {this.state.login} handleLastUser = {this.handleLastUser} user = {this.state.user}/>*/}
+                
+                <div>
+                    <Modal isOpen = {this.state.login} id = 'modal' className = "modal">
+                        
+                        <h3 id = "modal__tittle">Bienvenido/a</h3>
+                        
+                        {this.state.user? <p id = "modal__body">{this.state.user}</p> : undefined}
+                        
+                        <Link to = '/home'>
+                            <button className = "button" onClick = {this.handleLastUser}>Acceder</button>
+                        </Link>
 
+                    </Modal>
+                </div>
                 
                 {/* Link - Password Forgotten */}
                 <div className = "link">
