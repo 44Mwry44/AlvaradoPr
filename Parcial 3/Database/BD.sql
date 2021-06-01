@@ -1,6 +1,6 @@
-create database MiPagina;
+create database AlvaradoPr;
 
-use MiPagina;
+use AlvaradoPr;
 
 /* Creación de tablas */
 create table Users(
