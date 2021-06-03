@@ -1,11 +1,9 @@
 import  React  from "react";
 //import TextField from "../Componentes/TextField.js";
-import API from '../RutaAPI.js'
-import Bienvenido from '../Componentes/Bienvenido.js';
+import API from '../RutaAPI.js';
 import MD5 from 'crypto-js/md5';
 import { Link } from "react-router-dom";
-import Modal from 'react-modal';
-import { nodeName } from "jquery";
+import Bienvenido from '../Componentes/Bienvenido.js';
 
 class Login extends React.Component {
     constructor(props) {
@@ -24,9 +22,8 @@ class Login extends React.Component {
     
     async componentDidMount() 
     {
-        /*const respuesta = await fetch(`${API.RUTA_API}/Prueba.php`);
-        const videojuegos = await respuesta.json();
-        console.log(videojuegos);*/
+        /*const respuesta = await fetch(`${API.RUTA_API}/Sesion.php`);
+        console.log(await respuesta.json())*/
     }
 
     IniciarSesion = async () =>
@@ -124,7 +121,9 @@ class Login extends React.Component {
                 {/*Modal de "Bienvernido"*/}
                 
                 <div>
-                    <Modal isOpen = {this.state.login} id = 'modal' className = "modal">
+                    <Bienvenido UsuarioValido = {this.state.login} user = {this.state.user} handleLastUser = {this.handleLastUser} />
+
+                    {/*<Modal isOpen = {this.state.login} id = 'modal' Name = "modal">
                         
                         <h3 id = "modal__tittle">Bienvenido/a</h3>
                         
@@ -134,7 +133,7 @@ class Login extends React.Component {
                             <button className = "button" onClick = {this.handleLastUser}>Acceder</button>
                         </Link>
 
-                    </Modal>
+                    </Modal>*/}
                 </div>
                 
                 {/* Link - Password Forgotten */}
