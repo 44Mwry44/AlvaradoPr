@@ -2,10 +2,11 @@ import  React  from "react";
 //import TextField from "../Componentes/TextField.js";
 import API from '../RutaAPI.js';
 import MD5 from 'crypto-js/md5';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Bienvenido from '../Componentes/Bienvenido.js';
 
 class Login extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -22,21 +23,21 @@ class Login extends React.Component {
     
     async componentDidMount() 
     {
-        /*const respuesta = await fetch(`${API.RUTA_API}/Sesion.php`);
-        console.log(await respuesta.json())*/
+        this.setState({login: window.sessionStorage.getItem("isLogged")});
     }
 
     IniciarSesion = async () =>
     {
         
         const respuesta = await fetch(`${API.RUTA_API}/IniciarSesion.php?user=${this.state.user}&pass=${this.state.pass}`);
-        //await console.log(respuesta.json());
         try 
         {
             if(await respuesta.json())
             {
-                console.log(true);
                 this.setState({login: true});
+                console.log(this.state.login);
+                window.sessionStorage.setItem("isLogged", true);
+                window.sessionStorage.setItem("user", this.state.user);
                 alert("Bienvenido/a: " + this.state.user );
             }
         }
@@ -77,6 +78,12 @@ class Login extends React.Component {
     }
 
     render() {
+
+        if(window.sessionStorage.getItem("isLogged"))
+        {
+            return (<Redirect to = {'/home'} />);
+        }
+
         return (
             <div>
                 { /*Header*/ }

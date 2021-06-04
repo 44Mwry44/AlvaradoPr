@@ -1,25 +1,45 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import API from '../RutaAPI.js';
+import { Link, Redirect } from 'react-router-dom';
 
 class Home extends React.Component {
+    constructor(props)
+    {
+        super(props);
+        this.state = {
+            user: "",
+            login: false
+        };
+
+        this.handleLogout = this.handleLogout.bind(this);
+    }
     
     async componentDidMount()
     {
-        const respuesta = await fetch(`${API.RUTA_API}/VerficarSesion.php`);
-        if(await respuesta)
-        {
-            console.log(respuesta);
-            alert("Bienvenido/a: ");
-        }
+        this.setState({login: window.sessionStorage.getItem("isLogged")});
+        this.setState({user: window.sessionStorage.getItem("user")});
+        const log = this.state.login;
+        console.log(!window.sessionStorage.getItem("isLogged"));
+    }
+
+    handleLogout()
+    {
+        this.setState({login: false});
+        window.sessionStorage.removeItem("isLogged");
+        window.sessionStorage.removeItem("user");
+        console.log(this.state.login);
     }
     
     render() {
+        if(!window.sessionStorage.getItem("isLogged"))
+        {
+            return (<Redirect to = {'/'} />);
+        }
+
         return (
             <div>
-                Bienvenido: Usuario<br/>
+                Bienvenido: {this.state.user}<br/>
                 <Link to = "/">
-                    <button>Log out</button>
+                    <button onClick = {this.handleLogout}>Log out</button>
                 </Link>
             </div>
         )
