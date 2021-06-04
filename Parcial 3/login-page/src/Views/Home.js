@@ -17,7 +17,6 @@ class Home extends React.Component {
     {
         this.setState({login: window.sessionStorage.getItem("isLogged")});
         this.setState({user: window.sessionStorage.getItem("user")});
-        const log = this.state.login;
         console.log(!window.sessionStorage.getItem("isLogged"));
     }
 
