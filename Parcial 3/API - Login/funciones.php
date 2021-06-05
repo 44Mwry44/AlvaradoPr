@@ -23,14 +23,6 @@
         $sentencia = $bd->query("SELECT UserName from UserPass Where UserName = '".$user."'and Pass = '" .$pass. "'");
         if($sentencia->fetchObject())
         {
-            ini_set('display_errors', 1);
-            ini_set('display_startup_errors', 1);
-            error_reporting(E_ALL);
-            if(session_id() == ''){
-                //session has not started
-                session_start();
-                $_SESSION['miSesion'] = $user;
-            }
             return true;
         }
         return false;
