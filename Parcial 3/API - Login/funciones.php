@@ -30,13 +30,12 @@
 
     function CrearUsuario($user, $nombre, $apellidoM, $apellidoP, $edad, $genero, $pass)
     {
-        $bd = obtenerConexion();
-        $sentencia = $bd->query("call Crear_Usuario('" .$user. "', '" .$nombre. "', '" .$apellidoM. "', '" .$apellidoP. "', " .$edad. ", '" .$genero. "', '" .$pass. "')");
-        if($sentencia->execute());
+        $bd = new mysqli("localhost", "root", "", "AlvaradoPr");;
+        if (mysqli_query($bd,"call Crear_Usuario('" .$user. "', '" .$nombre. "', '" .$apellidoM. "', '" .$apellidoP. "', " .$edad. ", '" .$genero. "', '" .$pass. "')", MYSQLI_USE_RESULT) === true)
         {
-            return true;
+            echo true;
         }
-        return false;
+        echo false;
     }
 
     function obtenerConexion()

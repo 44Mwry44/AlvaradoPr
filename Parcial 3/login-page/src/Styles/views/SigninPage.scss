@@ -1,0 +1,38 @@
+#genderButtons
+{
+    align-items: center;
+}
+
+#Bienvenida
+{
+    font-size:4vw;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.genderTitle
+{
+    font-weight: bolder;
+}
+
+.btn-salir
+{
+    display: block;
+
+    border: 2px solid #4e008e;
+    border-radius: 100px;
+
+    padding: .25rem 3.2rem;
+    margin: 1.2rem auto;
+    background-color: white;
+    
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4e008e;
+}

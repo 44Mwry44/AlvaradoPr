@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import LogPage from './Views/LogIn.js';
 import Home from './Views/Home.js';
+import Signin from './Views/Signin';
 
 function App() {
 
@@ -16,8 +17,9 @@ function App() {
           
           <Switch>
            
-           <Route path="/" exact component = {LogPage}/>
-           <Route path="/home" component = {Home}/>
+           <Route path="/" exact component = {LogPage} />
+           <Route path="/home" component = {Home} />
+           <Route path="/signin" component = {Signin} />
           
           </Switch>
 

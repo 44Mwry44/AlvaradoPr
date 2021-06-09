@@ -1,5 +1,5 @@
 import  React  from "react";
-//import TextField from "../Componentes/TextField.js";
+import TextField from "../Componentes/TextField.js";
 import API from '../RutaAPI.js';
 import MD5 from 'crypto-js/md5';
 import { Link, Redirect } from "react-router-dom";
@@ -105,17 +105,9 @@ class Login extends React.Component {
                         <div className = "row justify-content-center">
                             <div className = "col-lg-5">
                             
-                            <div className="campo">
-                                <img className = "imagen" src="/img/LoginPage/Usuario.svg" />
-                                <input id = "User" className = "texto" type = "text" placeholder = "Usuario o E-mail" onChange = {this.handleChangeUser} />
-                            </div>
-
-                            <div className="campo">
-                                <img className = "imagen" src="/img/LoginPage/candado.svg" />
-                                <input id = "Pass" className = "texto" type = "password" placeholder = "Contraseña" onChange = {this.handleChangePass} />
-                            </div>
-                                { /* <TextField id = "EmailText" imgURL="/img/LoginPage/Usuario.svg"  type = "text"        textoInicial= "Usuario o E-mail" /> */ }
-                                { /*  <TextField id = "PasswordText" imgURL="/img/LoginPage/candado.svg"  type = "password"    textoInicial = "Contraseña" /> */ }
+                                <TextField id = "EmailText"     imgURL="/img/LoginPage/Usuario.svg"  type = "text"          textoInicial= "Usuario o E-mail"     handleChange = {this.handleChangeUser}/>
+                                <TextField id = "PasswordText"  imgURL="/img/LoginPage/candado.svg"  type = "password"      textoInicial = "Contraseña"          handleChange = {this.handleChangePass}/>
+                                 
                             </div>
                         </div>
                     </form>
@@ -128,19 +120,9 @@ class Login extends React.Component {
                 {/*Modal de "Bienvernido"*/}
                 
                 <div>
+
                     <Bienvenido UsuarioValido = {this.state.login} user = {this.state.user} handleLastUser = {this.handleLastUser} />
 
-                    {/*<Modal isOpen = {this.state.login} id = 'modal' Name = "modal">
-                        
-                        <h3 id = "modal__tittle">Bienvenido/a</h3>
-                        
-                        {this.state.user? <p id = "modal__body">{this.state.user}</p> : undefined}
-                        
-                        <Link to = '/home'>
-                            <button className = "button" onClick = {this.handleLastUser}>Acceder</button>
-                        </Link>
-
-                    </Modal>*/}
                 </div>
                 
                 {/* Link - Password Forgotten */}
@@ -159,7 +141,7 @@ class Login extends React.Component {
                 {/* Link inferior - Sign Up */}
                 <div className = "row justify-content-center">
                     <text className = "No-tienes-cuenta">¿No tienes cuenta?</text>
-                    <a className = "Crear-cuenta">Crear cuenta</a>
+                    <a href = '/signin'  className = "Crear-cuenta">Crear cuenta</a>
                 </div>
             </div>
         );
