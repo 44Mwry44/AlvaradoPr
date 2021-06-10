@@ -38,7 +38,6 @@ class Login extends React.Component {
                 console.log(this.state.login);
                 window.sessionStorage.setItem("isLogged", true);
                 window.sessionStorage.setItem("user", this.state.user);
-                alert("Bienvenido/a: " + this.state.user );
             }
         }
         catch(e)

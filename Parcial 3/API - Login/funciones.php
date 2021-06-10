@@ -30,8 +30,18 @@
 
     function CrearUsuario($user, $nombre, $apellidoM, $apellidoP, $edad, $genero, $pass)
     {
-        $bd = new mysqli("localhost", "root", "", "AlvaradoPr");;
+        $bd = new mysqli("localhost", "root", "", "AlvaradoPr");
         if (mysqli_query($bd,"call Crear_Usuario('" .$user. "', '" .$nombre. "', '" .$apellidoM. "', '" .$apellidoP. "', " .$edad. ", '" .$genero. "', '" .$pass. "')", MYSQLI_USE_RESULT) === true)
+        {
+            echo true;
+        }
+        echo false;
+    }
+
+    function EliminarUsuario($user)
+    {
+        $bd = new mysqli("localhost", "root", "", "AlvaradoPr");
+        if (mysqli_query($bd,"call Eliminar_Usuario('" .$user. "')", MYSQLI_USE_RESULT) === true)
         {
             echo true;
         }
@@ -49,16 +59,5 @@
         $database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $database->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
         return $database;
-    }
-
-    function devolverSesion()
-    {
-        session_start();
-        echo $_SESSION['miSesion'];
-    }
-
-    function eliminarSesion()
-    {
-        session_destroy();
     }
 ?>

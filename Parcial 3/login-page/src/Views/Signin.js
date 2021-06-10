@@ -4,7 +4,6 @@ import RadioButton from '../Componentes/RadioButton';
 import MD5 from 'crypto-js/md5';
 import API from '../RutaAPI.js';
 import { Redirect } from 'react-router';
-import { Link } from 'react-router-dom';
 
 export default class Signin extends React.Component {
     

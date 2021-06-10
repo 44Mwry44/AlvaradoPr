@@ -35,6 +35,16 @@ begin
 end; $$
 delimiter ;
 
+/* SP Para Eliminar usuarios de la BD */
+delimiter $$
+create procedure Eliminar_Usuario(
+	in UserN varchar(20))
+begin
+	Delete from UserPass where UserName = UserN;
+	Delete from Users where UserName = UserN;
+end; $$
+delimiter ;
+
 /* Datos de ejemplo */
 call Crear_usuario('Mwry', 'Ame', 'Alvarado', 'Preciado', 21, 'Fem', '30b67881f209b9fa8855403b3fc15573');
 call Crear_Usuario('Giorno', 'Marcos', 'Alejandro', 'Martinez', 21, 'Masc', 'cfa344f899e963ee80fb492db27fe09a');
