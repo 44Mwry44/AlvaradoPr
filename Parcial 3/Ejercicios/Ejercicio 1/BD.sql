@@ -35,6 +35,22 @@ begin
 end; $$
 delimiter ;
 
+/* SP Para actualizar usuarios de la BD */
+delimiter $$
+create procedure Actualizar_Usuario(
+	in UserN varchar(20), 
+    in Nombre varchar(40), 
+    in ApellidoMat varchar(20), 
+    in ApellidoPat varchar(20), 
+    in E int, 
+    in Gender varchar(25)) 
+begin
+	update Users 
+    set UserName = UserN, Nombres = Nombre, ApellidoMaterno = ApellidoMat, ApellidoPaterno = ApellidoPat, Edad = E, Genero = Gender
+    where UserName = UserN;
+end; $$
+delimiter ;
+
 /* SP Para Eliminar usuarios de la BD */
 delimiter $$
 create procedure Eliminar_Usuario(

@@ -54,10 +54,10 @@ class App extends React.Component {
     this.setState({ modalInsertar: false });
   };
 
-  editar = async (dato) => {
+  editar = async () => {
     var registro = this.state.form;
     const intEdad = parseInt(registro.Edad, 10);
-    await fetch(`${API.RUTA_API}/ActualizarUsuario.php?user=${registro.UserName}&nombre=${registro.Nombre}&apellidoM=${registro.ApellidoMaterno}&apellidoP=${registro.ApellidoPaterno}&edad=${intEdad}&genero=${registro.Genero}`);
+    await fetch(`${API.RUTA_API}/ActualizarUsuario.php?user=${registro.UserName}&nombre=${registro.Nombres}&apellidoM=${registro.ApellidoMaterno}&apellidoP=${registro.ApellidoPaterno}&edad=${intEdad}&genero=${registro.Genero}`);
     this.setState({ modalActualizar: false });
     this.componentDidMount(); 
   };
@@ -158,12 +158,13 @@ class App extends React.Component {
           <ModalBody>
             <FormGroup>
               <label>
-               Id:
+               UserName:
               </label>
             
               <input
                 className="form-control"
                 readOnly
+                name="UserName"
                 type="text"
                 value={this.state.form.UserName}
               />
@@ -175,7 +176,7 @@ class App extends React.Component {
               </label>
               <input
                 className="form-control"
-                name="Nombre"
+                name="Nombres"
                 type="text"
                 onChange={this.handleChange}
                 value={this.state.form.Nombres}
@@ -188,7 +189,7 @@ class App extends React.Component {
               </label>
               <input
                 className="form-control"
-                name="ApellidoM"
+                name="ApellidoMaterno"
                 type="text"
                 onChange={this.handleChange}
                 value={this.state.form.ApellidoMaterno}
@@ -201,7 +202,7 @@ class App extends React.Component {
               </label>
               <input
                 className="form-control"
-                name="ApellidoP"
+                name="ApellidoPaterno"
                 type="text"
                 onChange={this.handleChange}
                 value={this.state.form.ApellidoPaterno}
