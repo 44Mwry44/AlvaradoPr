@@ -48,6 +48,16 @@
         echo false;
     }
 
+    function ActualizarUsuario($user, $nombre, $apellidoM, $apellidoP, $edad, $genero)
+    {
+        $bd = new mysqli("localhost", "root", "", "AlvaradoPr");
+        if (mysqli_query($bd,"call Actualizar_Usuario('" .$user. "', '" .$nombre. "', '" .$apellidoM. "', '" .$apellidoP. "', " .$edad. ", '" .$genero. "')", MYSQLI_USE_RESULT) === true)
+        {
+            echo true;
+        }
+        echo false;
+    }
+
     function obtenerConexion()
     {
         $password = "";
